@@ -19,7 +19,8 @@
     "type": "string",
     "metadata": {
       "description": "The name of the logic app that will be deployed."
-    }
+    },
+    "defaultValue": "lrpplawedev"
   },
   "azureStorageAccountName": {
     "type": "string",
