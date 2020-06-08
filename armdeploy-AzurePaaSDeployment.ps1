@@ -15,7 +15,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force -Scope Process
 $Provider=Get-AzureRmResourceProvider | Format-Table 
 $Provider.ResourceTypes
 #####
-$resourceGroupName = "LandRegistryPricePaidTest" 
+$resourceGroupName = "LandRegistryPricePaid" 
 New-AzureRmResourceGroup -Name $resourceGroupName  -Location "West Europe" -Force 
 
 # Just validates the json file from github. Then removes the resource
