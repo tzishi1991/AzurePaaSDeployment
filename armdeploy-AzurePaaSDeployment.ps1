@@ -20,8 +20,8 @@ New-AzureRmResourceGroup -Name $resourceGroupName  -Location "West Europe" -Forc
 
 # Just validates the json file from github. Then removes the resource
 Test-AzureRmResourceGroupDeployment -ResourceGroupName $resourceGroupName `
--TemplateUri 'https://raw.githubusercontent.com/tzishi1991/AzurePaaSDeployment/master/azuredeploy-functionapp-sql-main.json' `
--TemplateParameterUri 'https://raw.githubusercontent.com/tzishi1991/AzurePaaSDeployment/master/azuredeploy-functionappsql.paramaters.json'
+-TemplateUri 'https://raw.githubusercontent.com/tzishi1991/AzurePaaSDeployment/master/azuredeploy.json' `
+-TemplateParameterUri 'https://raw.githubusercontent.com/tzishi1991/AzurePaaSDeployment/master/azuredeploy.parameters.json'
 
 Remove-AzureRmResourceGroup $resourceGroupName -Force
 New-AzureRmResourceGroup -Name $resourceGroupName  -Location "West Europe" -Force 
