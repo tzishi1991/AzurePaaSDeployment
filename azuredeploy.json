@@ -26,38 +26,44 @@
     "type": "string",
     "metadata": {
       "description": "The name of the storage account that will be deployed to be used by the logic app."
-    }
+    },
+    "defaultValue":  "lrppsawedev"
   },
   "azureStorageAccountDisplayName": {
     "type": "string",
     "metadata": {
       "description": "The display name of the storage account that will be deployed to be used by the logic app."
-    }
+    },
+    "defaultvalue": "LandRegistryPricePaidStorageAccountWestEuropeDevelopment"
   },
   "azureBlogStorageContainerName": {
     "type": "string",
     "metadata": {
       "description": "The name of the storage account container that will be deployed to be used by the logic app."
-    }
+    },
+    "defaultvalue": "lrppsacwedev"
   },
 
   "sqlServerName": {
     "type": "string",
     "metadata": {
       "description": "The name of the SQL server that will be deployed."
-    }
+    },
+    "defaultvalue": "lrppsswedev"
   },
   "sqlDatabaseName": {
     "type": "string",
     "metadata": {
       "description": "The name of the SQL database that will be deployed."
-    }
+    },
+    "defaultvalue": "lrppdbwedev"
   },
   "sqlServerAdministratorLogin": {
     "type": "string",
     "metadata": {
       "description": "The SQL server username that will be configured as admin on the SQL Server."
-    }
+    },
+    "defaultvalue": "sqladmin"
   },
   "sqlServerAdministratorLoginPassword": {
     "type": "securestring",
@@ -69,13 +75,15 @@
     "type": "string",
     "metadata": {
       "description": "The edition of the SQL database that will be created."
-    }
+    },
+    "defaultvalue": "Basic"
   },
   "sqlDatabaseServiceObjectiveName": {
     "type": "string",
     "metadata": {
       "description": "The service objective of the SQL database that will be created."
-    }
+    },
+    "defaultvalue": "Basic"
   },
   "repoURL": {
     "type": "string",
@@ -95,7 +103,8 @@
     "type": "string",
     "metadata": {
       "description": "The Uri of the linked template."
-    }
+    },
+    "defaultValue": "https://raw.githubusercontent.com/tzishi1991/AzurePaaSDeployment/master/azuredeploy.json"
   }
 },
   "variables": {
