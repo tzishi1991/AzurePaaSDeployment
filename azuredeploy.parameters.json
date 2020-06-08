@@ -23,6 +23,9 @@
     "sqlServerAdministratorLogin": {
       "value": "sqladmin"
     },
+    "sqlAdministratorLoginPassword": {
+      "value": "Password007"
+    },
     "sqlDatabaseEdition": {
       "value": "Basic"
     },
