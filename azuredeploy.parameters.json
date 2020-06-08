@@ -31,11 +31,9 @@
     },
     "storageAccountName": {
       "value": "lrrpsadev"
-    }
-    ,
+    },
     "linkedTemplateUri": {
       "value": "https://raw.githubusercontent.com/tzishi1991/AzurePaaSDeployment/master/azuredeploy.json"
     }
-    
   }
 }

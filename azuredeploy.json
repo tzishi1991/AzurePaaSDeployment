@@ -1,6 +1,6 @@
 {
-  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
+"$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+"contentVersion": "1.0.0.0",
 "parameters": {
 "location": {
     "type": "string",
@@ -78,7 +78,7 @@
   },
   "repoURL": {
     "type": "string",
-    "defaultValue": "https://github.com/RoyKimYYZ/rkFunctionApp.git",
+    "defaultValue": "https://github.com/tzishi1991/AzurePaaSDeployment.git",
     "metadata": {
       "description": "The URL for the GitHub repository that contains the project to deploy."
     }
@@ -243,7 +243,7 @@
       "value": "[reference('linkedTemplate-website').outputs.websiteId.value]"
     },
     "resourceGroupName": {
-       "type": "string",
+      "type": "string",
       "value": "[resourceGroup().Name]"
     }
   }
