@@ -23,7 +23,7 @@
     "sqlServerAdministratorLogin": {
       "value": "sqladmin"
     },
-    "sqlAdministratorLoginPassword": {
+    "sqlServerAdministratorLoginPassword": {
       "value": "Password007"
     },
     "sqlDatabaseEdition": {
