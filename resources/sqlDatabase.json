@@ -1,0 +1,80 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "sqlDatabaseTransparentDataEncryption": {
+        "type": "string",
+        "allowedValues": [
+          "Enabled",
+          "Disabled"
+        ],
+        "defaultValue": "Enabled"
+      },
+      "sqlDatabaseLocation": {
+        "type": "string",
+        "defaultValue": "[resourceGroup().location]",
+        "metadata": {
+          "description": "Location for all resources."
+        }
+      },
+      "sqlServerName": {
+        "type": "string",
+        "metadata": {
+          "description": "SqlServerName."
+        }
+      },
+      "sqlDatabaseName": {
+        "type": "string",
+        "metadata": {
+          "description": "SqlServerName."
+        }
+      },
+      "sqlDatabaseCollation": {
+        "type": "string",
+        "defaultValue": "SQL_Latin1_General_CP1_CI_AS"
+      },
+      "sqlDatabaseEdition": {
+        "type": "string",
+        "defaultValue": "Basic"
+      },
+      "sqlDatabaseServiceObjectiveName": {
+        "type": "string",
+        "defaultValue": "Basic"
+      }
+    },
+    "variables": {
+      "sqlServerName": "[parameters('sqlServerName')]",
+      "sqlDatabaseName": "[parameters('sqlDatabaseName')]",
+      "sqlDatabaseFullName": "[concat(parameters('sqlServerName'),'/',variables('sqlDatabaseName'))]"
+    },
+    "resources": [
+      {
+        "name": "[variables('sqlDatabaseFullName')]",
+        "type": "Microsoft.Sql/servers/databases",
+        "apiVersion": "2015-01-01",
+        "location": "[parameters('sqlDatabaseLocation')]",
+        "properties": {
+          "edition": "[parameters('sqlDatabaseEdition')]",
+          "collation": "[parameters('sqlDatabaseCollation')]",
+          "requestedServiceObjectiveName": "[parameters('sqlDatabaseServiceObjectiveName')]"
+        },
+        "dependsOn": [
+        ],
+        "resources": [
+          {
+            "comments": "Transparent Data Encryption",
+            "name": "current",
+            "type": "transparentDataEncryption",
+            "apiVersion": "2014-04-01-preview",
+            "properties": {
+              "status": "[parameters('sqlDatabaseTransparentDataEncryption')]"
+            },
+            "dependsOn": [
+              "[parameters('sqlDatabaseName')]"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  
